@@ -26,10 +26,16 @@ const Training: React.FC = () => {
   
   const programs = [
     { 
-      title: "Digital Leadership for Executives", 
+      title: "Industrial Robotics & Automation", 
+      cat: "Technology", 
+      image: "https://images.unsplash.com/photo-1563206767-5b18f218e8de?auto=format&fit=crop&q=80&w=800",
+      description: "Specialized training on the integration, maintenance, and strategic deployment of robotic systems in modern industrial environments."
+    },
+    { 
+      title: "Applied Artificial Intelligence (AI)", 
       cat: "Technology", 
       image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
-      description: "A strategic overview of emerging technologies and digital workflows for decision-makers and C-suite leadership."
+      description: "Mastering AI implementation, machine learning applications, and data intelligence to automate complex corporate processes."
     },
     { 
       title: "Occupational Safety & Health (OSH) Basics", 
@@ -56,22 +62,40 @@ const Training: React.FC = () => {
       description: "Specialized containment and protocol training for hazardous materials as per international chemical safety standards."
     },
     { 
-      title: "Crisis Management in Public Relations", 
+      title: "Transformational Leadership & Strategic Direction", 
       cat: "Management", 
-      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=800",
-      description: "Strategic communication frameworks for navigating corporate reputational risks and high-pressure media scenarios."
+      image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800",
+      description: "Empowering executives to lead through change and align organizational goals with a forward-looking strategic vision."
+    },
+    { 
+      title: "Leading High Performance Team", 
+      cat: "Management", 
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800",
+      description: "Advanced strategies for building and sustaining elite teams through psychological safety and performance optimization."
+    },
+    { 
+      title: "Professional Supervisory Skills", 
+      cat: "Management", 
+      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800",
+      description: "Core competencies for managerial excellence, focusing on personnel guidance, effective delegation, and output monitoring."
+    },
+    { 
+      title: "Analytical and Critical Thinking", 
+      cat: "Management", 
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+      description: "Sharpening decision-making capabilities through structured problem-solving and rigorous logical framework analysis."
+    },
+    { 
+      title: "Change Management for Professional", 
+      cat: "Management", 
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800",
+      description: "Mastering the human and operational dimensions of organizational transition to ensure business continuity and success."
     },
     { 
       title: "Emergency Response Leadership", 
       cat: "Operational", 
       image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800",
       description: "Command and control training for first responders and site managers during industrial emergencies and critical failures."
-    },
-    { 
-      title: "Data-Driven Supply Chain Logistics", 
-      cat: "Technology", 
-      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800",
-      description: "Integrating predictive analytics and high-performance computing to optimize global supply chains and distribution networks."
     },
   ];
 

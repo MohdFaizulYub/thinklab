@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Target, Eye, Shield, Star, Handshake, TrendingUp } from 'lucide-react';
 
@@ -30,7 +31,7 @@ const About: React.FC = () => {
       {/* Header */}
       <div className="bg-slate-50 py-20 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">About ThinkLab</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">About Thinklab</h1>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
             A multidisciplinary hub dedicated to training, consultancy, and competency development in Malaysia and beyond.
           </p>
@@ -82,7 +83,7 @@ const About: React.FC = () => {
             <div className="absolute -inset-4 bg-blue-600/5 rounded-[2.5rem] -rotate-2"></div>
             <img 
               src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=1200" 
-              alt="ThinkLab Corporate Environment" 
+              alt="Thinklab Corporate Environment" 
               className="relative rounded-3xl shadow-2xl w-full h-64 lg:h-full object-cover" 
             />
             <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-2xl shadow-xl border border-slate-100 hidden md:block">

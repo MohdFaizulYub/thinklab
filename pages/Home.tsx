@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ShieldCheck, Cpu, LineChart, Users, Zap } from 'lucide-react';
@@ -7,12 +8,12 @@ const Home: React.FC = () => {
     {
       icon: <LineChart className="w-8 h-8 text-blue-500" />,
       title: "Corporate Upskilling",
-      description: "Tailored executive training and workforce development programs designed to bridge the talent gap and foster leadership excellence."
+      description: "Tailored executive trainings and workforce development programs designed to bridge the talent gap and foster leadership excellence."
     },
     {
       icon: <Cpu className="w-8 h-8 text-blue-500" />,
-      title: "Digital & Robotic",
-      description: "Driving industrial automation and digital literacy through advanced training in robotics, smart systems, and emerging technologies."
+      title: "Digital & Robotics",
+      description: "Driving industrial automation and digital literacy through advanced training in robotics, AI, smart systems, and emerging technologies."
     },
     {
       icon: <ShieldCheck className="w-8 h-8 text-blue-500" />,
@@ -22,7 +23,7 @@ const Home: React.FC = () => {
     {
       icon: <Users className="w-8 h-8 text-blue-500" />,
       title: "Event Management",
-      description: "End-to-end strategic planning and execution of high-impact corporate summits, professional workshops, and networking galas."
+      description: "End-to-end strategic planning and execution of high-impact corporate events, summits, professional workshops, and networking galas."
     }
   ];
 
@@ -64,7 +65,7 @@ const Home: React.FC = () => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">Industry Excellence.</span>
             </h1>
             <p className="text-xl text-slate-300 max-w-2xl leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
-              ThinkLab is a multidisciplinary training and consultancy organization focused on high-stakes professional development and global competency.
+              Thinklab is a multidisciplinary training and consultancy organization focused on high-stakes professional development and global competency.
             </p>
             <div className="flex flex-col sm:flex-row items-center gap-4 pt-8 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
               <Link to="/solutions" className="bg-blue-600 text-white px-10 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all flex items-center text-lg w-full sm:w-auto justify-center shadow-xl shadow-blue-600/20">

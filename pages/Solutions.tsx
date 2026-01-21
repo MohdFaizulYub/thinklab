@@ -1,8 +1,58 @@
-import React from 'react';
-import { Briefcase, ShieldCheck, Users, Users2, Zap, ArrowRight } from 'lucide-react';
+
+import React, { useState } from 'react';
+import { Briefcase, ShieldCheck, Users, Users2, Zap, ArrowRight, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+const ProjectShowcasePopup = () => {
+  const projects = [
+    { title: "Property Development", img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800" },
+    { title: "Solar Systems", img: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=800" },
+    { title: "Waste-to-Energy", img: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&q=80&w=800" },
+    { title: "Sports Complex", img: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80&w=800" },
+    { title: "Prefabricated Tiny Home", img: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=1000" },
+  ];
+
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center pointer-events-none hidden lg:flex">
+      {/* Subtle Backdrop */}
+      <div className="absolute inset-0 bg-slate-950/40 backdrop-blur-sm animate-in fade-in duration-500"></div>
+      
+      {/* Centered Sharp Panel */}
+      <div className="relative w-full max-w-5xl bg-white border border-slate-200 shadow-[0_35px_60px_-15px_rgba(0,0,0,0.5)] animate-in fade-in zoom-in-95 duration-300 overflow-hidden rounded-none pointer-events-auto">
+        <div className="flex items-center justify-between p-8 bg-white border-b border-slate-100">
+          <div>
+            <h4 className="text-sm font-bold text-slate-900 uppercase tracking-[0.4em]">Strategic Portfolio Management</h4>
+          </div>
+        </div>
+        
+        <div className="grid grid-cols-2 gap-1 bg-slate-200 p-1">
+          {projects.map((p, idx) => (
+            <div 
+              key={idx} 
+              className={`relative group/proj overflow-hidden bg-slate-100 rounded-none ${idx === 4 ? 'col-span-2 h-72' : 'h-52'}`}
+            >
+              <img 
+                src={p.img} 
+                alt={p.title} 
+                className="w-full h-full object-cover transition-transform duration-[1500ms] ease-out group-hover/proj:scale-105" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/10 to-transparent opacity-90 group-hover/proj:opacity-80 transition-opacity flex items-end p-10">
+                <div>
+                  <span className="text-blue-400 text-[10px] font-bold uppercase tracking-[0.4em] mb-3 block">Managed Asset</span>
+                  <span className="text-white text-xl font-bold uppercase tracking-[0.2em]">{p.title}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Solutions: React.FC = () => {
+  const [showProjectShowcase, setShowProjectShowcase] = useState(false);
+
   const solutions = [
     {
       icon: <Users2 className="w-8 h-8 text-blue-600" />,
@@ -64,7 +114,7 @@ const Solutions: React.FC = () => {
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight">Strategic Corporate Solutions</h1>
             <p className="text-xl text-slate-300 leading-relaxed font-light">
-              ThinkLab provides executive-level consultancy and training to help organizations navigate industrial shifts, safety requirements, and competency evolution with precision.
+              Thinklab provides executive-level consultancy and training to help organizations navigate industrial shifts, safety requirements, and competency evolution with precision.
             </p>
           </div>
         </div>
@@ -73,9 +123,9 @@ const Solutions: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {solutions.map((s, i) => (
-            <div key={i} className="group bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-blue-100 transition-all duration-500 overflow-hidden flex flex-col">
+            <div key={i} className="group bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-blue-100 transition-all duration-500 overflow-visible flex flex-col relative">
               {/* Card Image Wrapper */}
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative h-64 overflow-hidden rounded-t-3xl">
                 <img 
                   src={s.image} 
                   alt={s.title} 
@@ -90,19 +140,33 @@ const Solutions: React.FC = () => {
               <div className="p-10 pt-4 flex-grow flex flex-col">
                 <h3 className="text-2xl font-bold text-slate-900 mb-6">{s.title}</h3>
                 <ul className="space-y-4 mb-6">
-                  {s.features.map((f, j) => (
-                    <li key={j} className="flex items-center text-slate-600">
-                      <Zap size={16} className="text-blue-500 mr-3 shrink-0" /> 
-                      <span className="text-sm font-medium">{f}</span>
-                    </li>
-                  ))}
+                  {s.features.map((f, j) => {
+                    const isProjectManagement = f === "Project Management" && s.title === "Consulting Services";
+                    return (
+                      <li 
+                        key={j} 
+                        className={`flex items-center text-slate-600 relative ${isProjectManagement ? 'cursor-help' : ''}`}
+                        onMouseEnter={() => isProjectManagement && setShowProjectShowcase(true)}
+                        onMouseLeave={() => isProjectManagement && setShowProjectShowcase(false)}
+                      >
+                        <Zap size={16} className={`mr-3 shrink-0 ${isProjectManagement ? 'text-blue-600 animate-pulse' : 'text-blue-500'}`} /> 
+                        <span className={`text-sm font-medium ${isProjectManagement ? 'text-blue-700 border-b border-dashed border-blue-200 pb-0.5' : ''}`}>
+                          {f}
+                        </span>
+                        {isProjectManagement && (
+                          <ExternalLink size={12} className="ml-2 text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        )}
+                        {isProjectManagement && showProjectShowcase && <ProjectShowcasePopup />}
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Updated Strategic CTA */}
+        {/* Strategic CTA */}
         <div className="mt-24 p-12 bg-blue-600 rounded-[2.5rem] text-white flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl shadow-blue-600/20 relative overflow-hidden group">
           <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-80 h-80 bg-white/10 rounded-full blur-3xl transition-transform group-hover:scale-110 duration-700"></div>
           <div className="relative z-10 max-w-2xl text-center lg:text-left">

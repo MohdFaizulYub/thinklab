@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { CheckCircle, Award } from 'lucide-react';
 import { HrdcLogo, CidbLogo, BritishCouncilLogo, DoshLogo, NioshLogo } from '../assets/images';
@@ -18,6 +19,11 @@ const Certification: React.FC = () => {
       title: "NIOSH Competency Training", 
       image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80&w=800",
       desc: "Technical and operational safety training validated by the National Institute of Occupational Safety and Health (NIOSH), designed for Safety & Health Officers (SHO) and high-risk industrial sectors." 
+    },
+    { 
+      title: "CIDB Certified Courses", 
+      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800",
+      desc: "Enhance technical proficiency within the construction sector through CIDB claimable programs. We provide specialized training modules designed to meet Construction Industry Development Board standards, focusing on project management and advanced infrastructure techniques." 
     }
   ];
 
@@ -48,7 +54,7 @@ const Certification: React.FC = () => {
             <div className="animate-in fade-in slide-in-from-left-4 duration-700">
               <h1 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight">Accreditation & Certification</h1>
               <p className="text-xl text-slate-300 leading-relaxed mb-10">
-                ThinkLab partners with Malaysia's leading regulatory bodies to provide recognized professional credentials that validate your industrial competency and technical mastery.
+                Thinklab partners with Malaysia's leading regulatory bodies to provide recognized professional credentials that validate your industrial competency and technical mastery.
               </p>
               <div className="flex flex-wrap items-center gap-6">
                 <div className="flex items-center text-blue-400 font-medium"><CheckCircle className="mr-2 w-5 h-5" /> Regulatory Compliance</div>
@@ -76,12 +82,12 @@ const Certification: React.FC = () => {
         
         <div className="space-y-8">
           {certs.map((c, i) => (
-            <div key={i} className="flex flex-col lg:flex-row gap-0 bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-blue-100 transition-all overflow-hidden group">
-              <div className="lg:w-1/3 h-64 lg:h-auto overflow-hidden">
+            <div key={i} className="flex flex-col lg:flex-row gap-0 bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-blue-100 transition-all overflow-hidden group items-stretch">
+              <div className="lg:w-1/3 min-h-[240px] lg:min-h-[320px] overflow-hidden relative">
                 <img 
                   src={c.image} 
                   alt={c.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
               <div className="lg:w-2/3 p-8 md:p-10 flex flex-col justify-center">
@@ -117,7 +123,7 @@ const Certification: React.FC = () => {
                 href={p.url} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500 hover:scale-110" 
+                className={`grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500 hover:scale-110 ${p.name === "British Council" ? "hidden" : ""}`} 
                 title={p.name}
               >
                 {p.logo}

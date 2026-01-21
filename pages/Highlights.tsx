@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Camera, Users, Building2, Zap, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -83,7 +84,7 @@ const Highlights: React.FC = () => {
           </Link>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">Gallery & Highlights</h1>
           <p className="text-xl text-slate-400 max-w-3xl leading-relaxed">
-            A visual documentation of ThinkLab's commitment to excellence, showcasing our environments, our people, and the impact of our programs.
+            A visual documentation of Thinklab's commitment to excellence, showcasing our environments, our people, and the impact of our programs.
           </p>
         </div>
       </div>

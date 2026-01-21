@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, Loader2 } from 'lucide-react';
 import { generateAssistantResponse } from '../services/geminiService';
@@ -6,7 +7,7 @@ import { Message } from '../types';
 const SmartAssistant: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
-    { role: 'assistant', content: 'Hello! I am your ThinkLab Assistant. How can I help you with your training or consultancy needs today?' }
+    { role: 'assistant', content: 'Hello! I am your Thinklab Assistant. How can I help you with your training or consultancy needs today?' }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Linkedin, Mail, Phone, MapPin } from 'lucide-react';
@@ -90,7 +91,8 @@ const Footer: React.FC = () => {
                 <a href="https://www.cidb.gov.my" target="_blank" rel="noopener noreferrer" className="grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500 hover:scale-110" title="CIDB Malaysia">
                   <CidbLogo className="h-10 w-auto" />
                 </a>
-                <a href="https://www.britishcouncil.my" target="_blank" rel="noopener noreferrer" className="grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500 hover:scale-110" title="British Council">
+                {/* British Council Logo hidden via className but kept in code */}
+                <a href="https://www.britishcouncil.my" target="_blank" rel="noopener noreferrer" className="hidden grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500 hover:scale-110" title="British Council">
                   <BritishCouncilLogo className="h-10 w-auto" />
                 </a>
               </div>
@@ -100,7 +102,7 @@ const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-slate-900 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-medium tracking-widest uppercase">
-          <p className="text-slate-500">© {new Date().getFullYear()} ThinkLab SDN BHD. All rights reserved.</p>
+          <p className="text-slate-500">© {new Date().getFullYear()} Thinklab SDN BHD. All rights reserved.</p>
           <div className="flex gap-8 text-slate-600">
             <a href="#" className="hover:text-white transition-colors">Privacy</a>
             <a href="#" className="hover:text-white transition-colors">Terms</a>
