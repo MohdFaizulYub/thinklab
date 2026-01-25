@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
               <span className="text-xl font-bold text-white font-montserrat tracking-[0.3em] inline-block scale-y-110 origin-left">THINKLAB</span>
             </div>
             <p className="text-base leading-relaxed mb-8 max-w-sm font-light">
-              Empowering global organizations through multidisciplinary excellence in industrial training, technical consultancy, and human capital development.
+              Empowering local and global organizations through multidisciplinary excellence in corporate leadership, technical and human capital development.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-300 group shadow-lg">
